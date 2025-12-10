@@ -1,0 +1,41 @@
+<%= form_with model: weapon, local: true do |form| %>
+  <% if weapon.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(weapon.errors.count, "erro") %> impediu que esta arma fosse salva:</h2>
+      <ul>
+        <% weapon.errors.full_messages.each do |msg| %>
+          <li><%= msg %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div>
+    <%= form.label :name, "Nome da Arma" %>
+    <%= form.text_field :name %>
+  </div>
+
+  <div>
+    <%= form.label :description %>
+    <%= form.text_area :description %>
+  </div>
+
+  <div>
+    <%= form.label :level %>
+    <%= form.number_field :level %>
+  </div>
+
+  <div>
+    <%= form.label :power_base, "Poder Base" %>
+    <%= form.number_field :power_base, step: :any %>
+  </div>
+
+  <div>
+    <%= form.label :power_step, "Aumento de Poder" %>
+    <%= form.number_field :power_step %>
+  </div>
+
+  <div>
+    <%= form.submit %>
+  </div>
+<% end %>

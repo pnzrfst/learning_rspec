@@ -1,0 +1,11 @@
+<div>
+    <% @weapons.each do |weapon| %>
+        <p><%= weapon.title %></p>
+        <p><%= weapon.current_power %></p>
+        <p><%= weapon.name =%></p>
+        <a href="/weapons/<%= weapon.id %>"><%=weapon.name %></a>
+         <%= link_to "Criar nova arma", new_weapon_path%>
+    <% end %>
+
+
+</div>

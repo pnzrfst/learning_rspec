@@ -1,0 +1,15 @@
+<div> 
+    <p><%=@weapon.title%></p>
+    <p>Nome: <%=@weapon.name%></p>
+    <p>Poder atual: <%=@weapon.current_power%></p>
+    <p>Descrição: <%=@weapon.description%></p>
+    <p>Level: <%=@weapon.level%></p>
+    <p>Power base: <%=@weapon.power_base%></p>
+    <p>Power step: <%=@weapon.power_step%></p>
+    <p>Veio ao mundo em: <%=@weapon.created_at.to_date%></p>
+
+
+    <%=button_to "Apagar", @weapon, method: :delete, data: {turbo_confirm: "Você tem certeza?"}%>
+    <%= link_to "Editar", edit_weapon_path(@weapon)%>
+    <%= link_to "Voltar", weapons_path%>
+</div>
